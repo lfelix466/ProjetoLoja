@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: [ "*" ]  # Altera para todas as branches
+    branches: [ "*" ]  # Aciona em todas as branches
   pull_request:
-    branches: [ "*" ]  # Altera para todas as branches
+    branches: [ "*" ]  # Aciona em todas as branches
 
 jobs:
   build:
@@ -17,8 +17,14 @@ jobs:
       with:
         dotnet-version: 9.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: |
+        cd Loja
+        dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: |
+        cd Loja
+        dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: |
+        cd Loja
+        dotnet test --no-build --verbosity normal
