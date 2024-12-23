@@ -2,9 +2,11 @@ name: .NET
 
 on:
   push:
-    branches: [ "*" ]  # Aciona em todas as branches
+    branches: 
+      - '*'
   pull_request:
-    branches: [ "*" ]  # Aciona em todas as branches
+    branches: 
+      - '*'
 
 jobs:
   build:

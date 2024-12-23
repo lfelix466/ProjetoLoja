@@ -1,4 +1,10 @@
+using Loja.Database;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Conexao com o banco
+builder.Services.AddDbContext<Contexto>(options => options.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Banco_Loja;Trusted_Connection=True;TrustServerCertificate=True;"));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
