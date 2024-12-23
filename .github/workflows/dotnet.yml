@@ -29,4 +29,4 @@ jobs:
     - name: Test
       run: |
         cd Loja
-        dotnet test --no-build --verbosity normal
+        dotnet test TestProject/TestProject.csproj --no-build --verbosity normal
