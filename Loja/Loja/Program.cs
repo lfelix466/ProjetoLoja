@@ -1,4 +1,6 @@
 using Loja.Database;
+using Loja.Repositories;
+using Loja.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,8 @@ builder.Services.AddDbContext<Contexto>(options => options.UseSqlServer("Server=
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ProdutoRepository>();
+builder.Services.AddScoped<ServicosImagem>();
 
 var app = builder.Build();
 

@@ -1,12 +1,103 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{459336C4-E345-48DB-B9BD-4645BD5105F8}|Loja\\Loja.csproj|c:\\users\\lfeli\\onedrive\\\u00E1rea de trabalho\\projetos\\projeto(.net)\\projetoloja\\loja\\loja\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459336C4-E345-48DB-B9BD-4645BD5105F8}|Loja\\Loja.csproj|solutionrelative:loja\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459336C4-E345-48DB-B9BD-4645BD5105F8}|Loja\\Loja.csproj|c:\\users\\lfeli\\onedrive\\\u00E1rea de trabalho\\projetos\\projeto(.net)\\projetoloja\\loja\\loja\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459336C4-E345-48DB-B9BD-4645BD5105F8}|Loja\\Loja.csproj|solutionrelative:loja\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459336C4-E345-48DB-B9BD-4645BD5105F8}|Loja\\Loja.csproj|c:\\users\\lfeli\\onedrive\\\u00E1rea de trabalho\\projetos\\projeto(.net)\\projetoloja\\loja\\loja\\repositories\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459336C4-E345-48DB-B9BD-4645BD5105F8}|Loja\\Loja.csproj|solutionrelative:loja\\repositories\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459336C4-E345-48DB-B9BD-4645BD5105F8}|Loja\\Loja.csproj|c:\\users\\lfeli\\onedrive\\\u00E1rea de trabalho\\projetos\\projeto(.net)\\projetoloja\\loja\\loja\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459336C4-E345-48DB-B9BD-4645BD5105F8}|Loja\\Loja.csproj|solutionrelative:loja\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459336C4-E345-48DB-B9BD-4645BD5105F8}|Loja\\Loja.csproj|c:\\users\\lfeli\\onedrive\\\u00E1rea de trabalho\\projetos\\projeto(.net)\\projetoloja\\loja\\loja\\views\\produtos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{459336C4-E345-48DB-B9BD-4645BD5105F8}|Loja\\Loja.csproj|solutionrelative:loja\\views\\produtos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\Loja\\Program.cs",
+              "RelativeDocumentMoniker": "Loja\\Program.cs",
+              "ToolTip": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\Loja\\Program.cs",
+              "RelativeToolTip": "Loja\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T11:05:00.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProdutosController.cs",
+              "DocumentMoniker": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\Loja\\Controllers\\ProdutosController.cs",
+              "RelativeDocumentMoniker": "Loja\\Controllers\\ProdutosController.cs",
+              "ToolTip": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\Loja\\Controllers\\ProdutosController.cs",
+              "RelativeToolTip": "Loja\\Controllers\\ProdutosController.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAADwv40AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T12:58:47.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProdutoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\Loja\\Repositories\\ProdutoRepository.cs",
+              "RelativeDocumentMoniker": "Loja\\Repositories\\ProdutoRepository.cs",
+              "ToolTip": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\Loja\\Repositories\\ProdutoRepository.cs",
+              "RelativeToolTip": "Loja\\Repositories\\ProdutoRepository.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAkwHkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T22:32:16.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\Loja\\Models\\Produto.cs",
+              "RelativeDocumentMoniker": "Loja\\Models\\Produto.cs",
+              "ToolTip": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\Loja\\Models\\Produto.cs",
+              "RelativeToolTip": "Loja\\Models\\Produto.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAIA3wBoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T13:00:56.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\Loja\\Views\\Produtos\\Create.cshtml",
+              "RelativeDocumentMoniker": "Loja\\Views\\Produtos\\Create.cshtml",
+              "ToolTip": "C:\\Users\\lfeli\\OneDrive\\\u00C1rea de Trabalho\\Projetos\\Projeto(.NET)\\ProjetoLoja\\Loja\\Loja\\Views\\Produtos\\Create.cshtml",
+              "RelativeToolTip": "Loja\\Views\\Produtos\\Create.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-30T22:57:41.594Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -28,12 +28,12 @@
             <!-- Campo para selecionar a imagem -->
             <div class="form-group">
                 <label asp-for="Imagem" class="control-label"></label>
-                <input asp-for="Imagem" class="form-control" type="file" />
-                <span asp-validation-for="Imagem" class="text-danger"></span>
+                <input asp-for="Imagem" class="form-control" type="file" id="imagem" required />
+                <div id="error-message" style="color: red; display: none;">Por favor, selecione uma imagem!</div>
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" onclick="validarArquivo()" />
             </div>
         </form>
     </div>
@@ -42,6 +42,22 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+<script>
+    function validarArquivo(event) {
+      var inputFile = document.getElementById('imagem');
+      var errorMessage = document.getElementById('error-message');
+
+      // Verifique se algum arquivo foi selecionado
+      if (inputFile.files.length === 0) {
+        errorMessage.style.display = 'block'; // Exibe a mensagem de erro
+        preventDefault();  // Impede o envio do formulário
+      } else {
+        errorMessage.style.display = 'none';  // Oculta a mensagem de erro
+      }
+    }
+</script>
+
 
 @section Scripts {
     @{

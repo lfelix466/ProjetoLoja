@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Loja.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20241222195229_Inicial-criacao")]
-    partial class Inicialcriacao
+    [Migration("20250131221752_inicialCreate")]
+    partial class inicialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,6 @@ namespace Loja.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<byte[]>("Imagem")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)")
                         .HasColumnName("imagem");
 

@@ -22,10 +22,9 @@ namespace Loja.Models
         [Display(Name = "Preço")]
         public decimal Preco { get; set; }
 
-        [Required]
         [Column("imagem")]
         [Display(Name = "Imagem")]
-        public byte[]? Imagem { get; set; }
+        public byte[]? Imagem { get; set; } = null;
 
         public bool precoValido(float preco)
         {

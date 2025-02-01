@@ -31,7 +31,6 @@ namespace Loja.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<byte[]>("Imagem")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)")
                         .HasColumnName("imagem");
 

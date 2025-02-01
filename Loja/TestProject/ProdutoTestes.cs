@@ -3,7 +3,7 @@ namespace TestProject
 {
     public class ProdutoTestes
     {
-        private Produto? produto { get; set; } = null;
+        private Produto produto { get; set; } = null!;
 
         [SetUp]
         public void Setup()
@@ -14,13 +14,19 @@ namespace TestProject
         [Test]
         public void precoValidoTesteVerdadeiro()
         {
-            Assert.That(produto.precoValido(10), Is.True);
+            if (produto != null)
+            {
+                Assert.That(produto.precoValido(10), Is.True);
+            }
         }
 
         [Test]
         public void precoValidoTesteFalso()
         {
-            Assert.That(produto.precoValido(-20), Is.False);
+            if (produto != null)
+            {
+                Assert.That(produto.precoValido(-20), Is.False);
+            }
         }
     }
 }

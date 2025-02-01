@@ -1,46 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using Loja.Database;
 using Loja.Models;
+using Loja.Repositories;
+using Loja.Services;
 
 namespace Loja.Controllers
 {
     public class ProdutosController : Controller
     {
         private readonly Contexto _context;
+        private readonly ProdutoRepository produtoRepository;
+        private readonly ServicosImagem servicosImagem;
 
-        public ProdutosController(Contexto context)
+        public ProdutosController(Contexto context, ProdutoRepository produtoRepository, ServicosImagem servicosImagem)
         {
             _context = context;
+            this.produtoRepository = produtoRepository; // inicializando o produtoRepository
+            this.servicosImagem = servicosImagem; // inicializando o servicosImagem
         }
 
         // GET: Produtos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Produtos.ToListAsync());
+            return View(await produtoRepository.listarProdutos());
         }
 
         // GET: Produtos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var produto = await _context.Produtos
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (produto == null)
-            {
-                return NotFound();
-            }
-
-            return View(produto);
+            return View(await produtoRepository.listarProdutosPorId(id));
         }
 
         // GET: Produtos/Create
@@ -56,42 +44,43 @@ namespace Loja.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Produto produto, IFormFile imagem)
         {
-            if (imagem != null && imagem.Length > 0)
-            {
-                using (var memoryStream = new MemoryStream())
-                {
-                    await imagem.CopyToAsync(memoryStream);
-                    produto.Imagem = memoryStream.ToArray(); // Store the image as byte array
-                }
 
-                // Remover a validação de ModelState para a propriedade Imagem
-                ModelState.Remove("Imagem");
+            var imagemConvertida = await servicosImagem.converteImagem(imagem);
+
+            if (imagemConvertida == null)
+            {
+                return NotFound();
             }
+            else
+            {
+                produto.Imagem = imagemConvertida;
+            }
+
+            // Remover a validação de ModelState para a propriedade Imagem
+            //ModelState.Remove("Imagem");
 
             if (ModelState.IsValid)
             {
-                _context.Add(produto);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (await produtoRepository.Criar(produto))
+                {
+                    return RedirectToAction(nameof(Index));
+                }
             }
             return View(produto);
         }
 
-
         // GET: Produtos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var produto = await _context.Produtos.FindAsync(id);
+            var produto = await produtoRepository.ProcurarPorId(id);
+
             if (produto == null)
             {
-                return NotFound();
+                return NotFound(); // Retorna 404 se o produto não for encontrado
             }
-            return View(produto);
+
+            return View(produto); // Retorna a view com o produto encontrado
         }
 
         // POST: Produtos/Edit/5
@@ -99,33 +88,24 @@ namespace Loja.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Preco,Imagem")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, Nome, Preco, Imagem")] Produto produto, IFormFile imagem)
         {
-            if (id != produto.Id)
+
+            if (imagem != null)
             {
-                return NotFound();
+                produto.Imagem = await servicosImagem.converteImagem(imagem);
             }
+
+            ModelState.Remove("Imagem");
 
             if (ModelState.IsValid)
             {
-                try
+                if (await produtoRepository.Atualizar(produto))
                 {
-                    _context.Update(produto);
-                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ProdutoExists(produto.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
             }
+
             return View(produto);
         }
 
@@ -137,8 +117,7 @@ namespace Loja.Controllers
                 return NotFound();
             }
 
-            var produto = await _context.Produtos
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var produto = await produtoRepository.ProcurarPorId(id);
             if (produto == null)
             {
                 return NotFound();
@@ -152,19 +131,15 @@ namespace Loja.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var produto = await _context.Produtos.FindAsync(id);
-            if (produto != null)
+            if (await produtoRepository.Deletar(id))
             {
-                _context.Produtos.Remove(produto);
+                return RedirectToAction(nameof(Index));
             }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool ProdutoExists(int id)
-        {
-            return _context.Produtos.Any(e => e.Id == id);
+            else
+            {
+                return NotFound();
+            }
+            
         }
     }
 }

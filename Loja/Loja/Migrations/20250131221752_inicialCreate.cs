@@ -5,7 +5,7 @@
 namespace Loja.Migrations
 {
     /// <inheritdoc />
-    public partial class Inicialcriacao : Migration
+    public partial class inicialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,7 @@ namespace Loja.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     preco = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
-                    imagem = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
+                    imagem = table.Column<byte[]>(type: "varbinary(max)", nullable: true)
                 },
                 constraints: table =>
                 {
